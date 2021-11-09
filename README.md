@@ -102,6 +102,55 @@ Talk to Ana Vallianatos for contacts.
 * Local Return Money Data (OMB contact: Drew Phillips)
   * Last contact: Email to Drew on 6/10/21. Next steps were to have OMB demo the new database they've set up. OMB is interested in making this data public but will need to clear it by a committee and the Board first.
 
+### GTFS
+
+Automate and possibly move/restructure.
+
+The current process for updating GTFS bus data:
+
+Rollin Baker uploads a zip file of the new GTFS data to Google Drive.  He then uses the Google Drive share feature to email the files to a list that he maintains:
+
+> amanda.pacheco@goswift.ly; Baker, Rollin <BAKERRO@metro.net>; bingmapstransit@microsoft.com; chloe.haines@itoworld.com; crivera@devsar.com; data@transitapp.com; drew@interline.io; emma.bridgeford@itoworld.com; fiona_mcdonnell2@apple.com; g.genna@goswift.ly; gabriella@moovit.com; Gordon, John <GordonJ@metro.net>; ian@interline.io; jacob.whitbeck@pactera.com; jacob.whitbeck@pacteraedge.com; justine.coates@microsoft.com; kayla@goswift.ly; Lam, Lan-Chi <LAML@metro.net>; maps_data_validation@apple.com; Martinez, Al <MartinezAl@metro.net>; mgridley@apple.com; michael.jacklin@itoworld.com; moovitaccess@moovit.com; Nguyen, Dan <NguyenD@metro.net>; nicolas@transit.app; pavel.belsky@moovit.com; rob.gaffney@goswift.ly; shane.reynolds@itoworld.com; Simpson, Joe <SimpsonJ@metro.net>; support@goswift.ly; transit_contact@group.apple.com; Wang, Peishan <WANGP@metro.net>; yochi.danino@moovit.com
+
+He includes a brief high level description of changes to the GTFS.  Our web team receives this email notification of the new GTFS data.
+
+Originally, we would have to process it to convert the Windows-style line endings to Unix-style.  It would then be published to the GitLab repository as individual unzipped files in addition to the zip file.  The README file would be updated with the description of the latest changes as well as a log of the zip file contents.
+
+Because of the OpenTripPlanner implementation on metro.net, we would have to publish the new GTFS to GitLab at a specific time - Saturday evening - so that it wouldn't be used by OTP too soon.  That's because the new GTFS' calendar dates don't start until the day of the shakeup and we don't release a merged version of the old and new GTFS (because it was too big for Google to consume back in the day).
+
+Now, because we don't have OTP on our website anymore, some of these things do not apply and we can re-do the way we publish our GTFS.
+
+#### Restructure
+
+1) It is on GitHub instead of GitLab.
+2) It archives old GTFS versions.
+3) It can be released well in advance before service goes into effect.
+4) Build in automation (see below)
+
+This will require us to communicate with data consumers as external stakeholders.  Internal stakeholders to include are Dan Nguyen and Rollin Baker.
+
+#### Automate
+
+The way GTFS gets published currently:
+
+- Rail GTFS updates are automated through a python script that runs nightly by ITS.  This has to do with the fact that the process to generate the GTFS files (coming from HASTUS) results in the files being put into an FTP location that only ITS has access to.  We may be able to request access to, it's uncertain whether we can SSH to it.  This is what we need to ask ITS about.
+- Bus GTFS is manual but we should build out an automated workflow.
+
+Normally, bus GTFS updates very infrequently, but starting the week of 9/13, new `calendar_dates.txt` files will be generated weekly.
+
+This file has 2 components.  The base data, which is generated from HASTUS, and the Dodger Stadium/SoFi Stadium service which is NOT in HASTUS and is manually created by Rollin Baker.  The two datasets can easily be appended.  We can also choose to optimize the data by removing non-relevant date ranges.
+
+The thought is:
+
+- We take the existing python script used for rail and create one for the bus GTFS.
+- We give that script to ITS to run weekly after the new `calendar_dates.txt` file is generated.
+- QUESTION: Do we want ITS to append the two datasets to create the final `calendar_dates.txt`, or do we want our script to do that.
+
+#### Long Term Maintenance Goals
+
+- [ ] We need to know what Rollin does to process the GTFS.
+- [ ] We need to work with ITS to figure out how to automate things.
+
 ### General
 
 * Proactively post the datasets that are most frequently requested via CPRA/FOIA.
