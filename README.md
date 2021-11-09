@@ -45,9 +45,15 @@ Government should release machine readable data openly for the public to use, by
   * Get current shapefile that contains all the rail lines.
   * Get current shapefile for rail portals.
   * Any single shapefiles that contain all bus lines?
-* Operations
+* Operations (contact: Dan Nguyen)
   * Divisions and their locations. 
   * Contextual information about: directly operated vs non-directly operated lines, passenger miles, revenue service hours (RSH), schedule day types, hardware/software systems (HASTUS, APC, ATMS, etc.).
+  * Ridership Stats dashboard and underlying data (built on .NET VB and we have the option of re-writing)
+  * Operational KPIs beyond ridership stats data.
+  * References from other agencies:
+    * MBTA: https://mbtabackontrack.com/performance/#/detail/ridership/2021-05-01////
+    * CTA: https://www.transitchicago.com/ridership/#open
+    * NY Times: https://www.nytimes.com/interactive/2021/03/08/climate/nyc-transit-covid.html
 * Projects
   * Project management, contract, budget data.
 * General
