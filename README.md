@@ -44,6 +44,19 @@ https://www.arcgis.com/home/webmap/viewer.html?webmap=e2b8b6597bcd4db9a1c4773759
 * Fix bugs, create better issue notifications.
 * Prepare for release of GTFS-RT.
 
+### GIS - OneMAP
+
+Figure out how we can combine our work with what's being done on OneMAP (contacts: Anika and Kenneth)
+
+OneMap Hub for employee guides on how to use ArcGIS:
+https://la-metro-onemap-program-lametro.hub.arcgis.com/
+
+ArcGIS Online uses Metro SSO:
+https://lametro.maps.arcgis.com/home/index.html
+
+Not sure what this is, but I believe it's only accessible from the Metro internal network:
+https://gis.metro.net/portal/
+
 ### Operations
 
 Contact: Dan Nguyen
