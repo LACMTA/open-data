@@ -25,6 +25,10 @@ Government should release machine readable data openly for the public to use, by
 
 ## Ideas
 
+### HC&D
+
+* workforce demographics (Melinda)
+
 ### Bikes
 
 * Find the direct source for bikeways data.  Might be multiple separately maintained datasets (Metro, [LA County Public Works](https://egis-lacounty.hub.arcgis.com/datasets/la-county-bikeways).
@@ -37,6 +41,10 @@ Contact: Naomi Iwasaki (Office of Race & Equity)
 
 Equity Focused Communities Map/Data:
 https://www.arcgis.com/home/webmap/viewer.html?webmap=e2b8b6597bcd4db9a1c47737595de070&extent=-119.1491,33.6991,-117.184,34.6794
+
+### OEI
+
+* Crashes/Fatalities data (Avital)
 
 ### APIs
 
@@ -63,7 +71,7 @@ Contact: Dan Nguyen
 
 #### Ridership
 
-The [Ridership Stats Dashboard](https://isotp.metro.net/MetroRidership/) and its underlying data is open to our team for re-writing and re-designing.  It's built on .NET/VB and there is no staff in Operations available/knowledgable enough to continue development in its current form.  It is in dire need of improvements to its interface and the ability to download the raw data.
+The [Ridership Stats Dashboard](https://isotp.metro.net/MetroRidership/) and its underlying data is open to our team for re-writing and re-designing.  It's built on .NET/VB and there is no staff in Operations available/knowledgable enough to continue development in its current form.  It is in dire need of improvements to its interface and the ability to download the raw data. (Joe/Rollin)
 
 References from other agencies:
 * MBTA: https://mbtabackontrack.com/performance/#/detail/ridership/2021-05-01////
